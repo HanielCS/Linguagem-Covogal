@@ -21,16 +21,13 @@ class AutomatoCovogal:
                 'H': 'q0',     'N': 'q0'      # Vogal seguida de consoante = ok (volta p/ q0)
             },
             'q_erro': {
-                # Estado sorvedouro: qualquer coisa mantém no erro
+                # Estado morto: qualquer coisa mantém no erro
                 'A': 'q_erro', 'E': 'q_erro', 
                 'H': 'q_erro', 'N': 'q_erro'
             }
         }
 
     def processar_cadeia(self, cadeia):
-        """
-        Simula o funcionamento do AFD passo a passo.
-        """
         estado_atual = self.estado_inicial
         passos = []
 
@@ -49,21 +46,17 @@ class AutomatoCovogal:
                 
                 # Registra o passo para visualização
                 passos.append(f"δ({estado_atual}, {simbolo}) -> {proximo_estado}")
-                
-                # Atualiza o estado
+
                 estado_atual = proximo_estado
             else:
-                # Caso defensivo (não deve ocorrer se o alfabeto for validado antes)
                 estado_atual = 'q_erro'
 
-            # (Opcional) Efeito visual simples
             time.sleep(0.05) 
 
         # Exibe o caminho percorrido (Trace)
         for passo in passos:
             print("   " + passo)
 
-        # Verificação Final
         print(f"Estado Final: {estado_atual}")
         
         if estado_atual in self.estados_finais:
@@ -71,7 +64,7 @@ class AutomatoCovogal:
         else:
             return False
 
-# --- Interface do Usuário ---
+# Interface do Usuário
 def main():
     afd = AutomatoCovogal()
     

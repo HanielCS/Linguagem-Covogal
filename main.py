@@ -87,9 +87,9 @@ def main():
             aceita = afd.processar_cadeia(entrada)
             
             if aceita:
-                print(f"\n✅ RESULTADO: CADEIA ACEITA (Pertence a L)")
+                print(f"\nCADEIA ACEITA (Pertence a L)")
             else:
-                print(f"\n❌ RESULTADO: CADEIA REJEITADA (Não pertence a L)")
+                print(f"\nCADEIA REJEITADA (Não pertence a L)")
                 
         except KeyboardInterrupt:
             print("\nSaindo...")

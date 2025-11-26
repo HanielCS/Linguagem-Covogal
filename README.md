@@ -16,7 +16,7 @@ python3 main.py
 
 ## 🛠️ Estrutura do Autômato
 
-Estados: q0 (Seguro), q1 (Inseguro), q_erro (Rejeição)
+Estados: q0 (Seguro), q1 (Inseguro), q_erro (Morto)
 
 Estado Inicial: q0
 
